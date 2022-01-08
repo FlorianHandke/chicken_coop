@@ -16,6 +16,7 @@ Since comparable models often cost over 100€, I want to show a low-cost altern
 |100nF ceramic condensator|<1€| [amazon](https://www.amazon.de/Generic-Stück-100nF-0-1uF-Keramikkondensator/dp/B01LWWKAIB/ref=sr_1_5?crid=20BK1WO5QNVKL&keywords=100nf+keramikkondensator&qid=1641639603&sprefix=100nF%2Caps%2C87&sr=8-5)|
 |SPDT slide switch|<1€|[amazon](https://www.amazon.de/Sourcingmap-Schiebeschalter-Positionen-einpoliger-Umschalter/dp/B007Q854MS/ref=sr_1_13__mk_de_DE=ÅMÅŽÕÑ&crid=175HBGJSCFUBC&keywords=SPDT+slide+switch&qid=1641639692&sprefix=spdt+slide+switch%2Caps%2C73&sr=8-13)|
 |Jumper wires|<1€|[amazon](https://www.amazon.de/Female-Female-Male-Female-Male-Male-Steckbrücken-Drahtbrücken-bunt/dp/B01EV70C78/ref=sr_1_1_sspa__mk_de_DE=ÅMÅŽÕÑ&crid=1D3XLIKPKA47I&keywords=jumper+wires&qid=1641639850&sprefix=jumper+wires%2Caps%2C87&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNkJXOTVKMjQzUUU3JmVuY3J5cHRlZElkPUEwNDI2MTE3MjVLMk9BSzZOV1YzUCZlbmNyeXB0ZWRBZElkPUExMDAwNjg1MUFSNzFTUlhGM0hSOSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)|
+|DHT22  temperatur &humidity sensor| 5,00 | [amazon](https://www.amazon.de/DHT22-AM2302-Digital-Temperatur-Feuchtesensor/dp/B01DB8JH4M/ref=asc_df_B01DB8JH4M/?tag=googshopde-21&linkCode=df0&hvadid=310656370773&hvpos=&hvnetw=g&hvrand=12351117059773754875&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9041896&hvtargid=pla-563427343631&psc=1&th=1&psc=1&tag=&ref=&adgrpid=59918534137&hvpone=&hvptwo=&hvadid=310656370773&hvpos=&hvnetw=g&hvrand=12351117059773754875&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9041896&hvtargid=pla-563427343631)|
 
 Total costs will be approx 40€.
 
@@ -55,6 +56,10 @@ Motor A can be controlled with OUT1 and OUT2 (motor 2 with OUT3 and Out4). At th
 The IC is controlled via input pins 1 and 2 (3 & 4 for another motor):
  * If **input 1** is controlled with LOW and **input 2** with HIGH, the motor rotates **"forward"**.
  * If **input 1** is controlled with HIGH and **input 2** with LOW, the motor rotates **"backwards"**.
+
+## DHT22 temperature and humidity sensor
+
+
 
 # Arduino IDE
 
