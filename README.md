@@ -61,3 +61,8 @@ The IC is controlled via input pins 1 and 2 (3 & 4 for another motor):
 # Arduino IDE
 
 To get started with Arduino [install](https://www.arduino.cc/en/Guide/macOS) the IDE.
+
+# Further Considerations
+
+* Implementation of a camera that periodically takes a picture of the coop (costs approx 11€)
+* Replacing the batteries with a solar powered charger (costs approx 30€)
