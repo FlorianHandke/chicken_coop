@@ -34,5 +34,6 @@ Why did I choose the ESP32 as the basis for the project:
 
 ## L298N Motor Driver
 
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pollin.de%2Fp%2Fjoy-it-motormodul-2-4phasen-l298n-810877&psig=AOvVaw3XxTVklSz12K8HTlJzCb6A&ust=1641726792549000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi7r4SDovUCFQAAAAAdAAAAABAF![image](https://user-images.githubusercontent.com/34957612/148641970-c33ab5f8-ea55-4588-92c3-2547fe84ee98.png)
+The L298N allows us to run two DC motors simultaneously. Currently we only need one, but I chose it to automate more components in the chicken house at a later date. For example, the supply of feed.
 
+Motor A can be controlled with OUT1 and OUT2 (motor 2 with OUT3 and Out4). At the "bottom" is the power supply with +12, GND and 5V. The 5V connection can be used to start the chip. However, if the jumper is in place, the start is done via the power supply of the motor.
