@@ -21,6 +21,8 @@ Since comparable models often cost over 100€, I want to show a low-cost altern
 |SPDT slide switch|<1€|[amazon](https://www.amazon.de/Sourcingmap-Schiebeschalter-Positionen-einpoliger-Umschalter/dp/B007Q854MS/ref=sr_1_13__mk_de_DE=ÅMÅŽÕÑ&crid=175HBGJSCFUBC&keywords=SPDT+slide+switch&qid=1641639692&sprefix=spdt+slide+switch%2Caps%2C73&sr=8-13)|
 |Jumper wires|<1€|[amazon](https://www.amazon.de/Female-Female-Male-Female-Male-Male-Steckbrücken-Drahtbrücken-bunt/dp/B01EV70C78/ref=sr_1_1_sspa__mk_de_DE=ÅMÅŽÕÑ&crid=1D3XLIKPKA47I&keywords=jumper+wires&qid=1641639850&sprefix=jumper+wires%2Caps%2C87&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNkJXOTVKMjQzUUU3JmVuY3J5cHRlZElkPUEwNDI2MTE3MjVLMk9BSzZOV1YzUCZlbmNyeXB0ZWRBZElkPUExMDAwNjg1MUFSNzFTUlhGM0hSOSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)|
 
+Total costs will be approx 40€.
+
 # Used Parts
 
 ## ESP32
