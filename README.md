@@ -40,6 +40,14 @@ The RTC memory of the ESP32 remains active so we can start the CPU by external e
 
 For more information about Deep Sleep Mode: there is a great tutorial from [Great Nerd Tutorial](https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/)
 
+### MQTT Broker
+
+> MQTT is a lightweight, publish-subscribe network protocol that transports messages between devices. The protocol usually runs over TCP/IP, however, any network > protocol that provides ordered, lossless, bi-directional connections can support MQTT. [[wikipedia](https://en.wikipedia.org/wiki/MQTT), 2021)
+
+To make sure that the doors are really closed or open, we implement a MQTT client on our ESP32. It will publish data to an MQTT broker (e.g. [Mosquitto](https://mosquitto.org) or [HiveMQ](https://www.hivemq.com)) and we can then consume (or subscribe) the data via NodeRed.
+
+For installations that are too far from the local WiFi network, it is recommended to use LoRaWAN.
+
 ## L298N Motor Driver
 
 The L298N allows us to run two DC motors simultaneously. Currently we only need one, but I chose it to automate more components in the chicken house at a later date. For example, the supply of feed.
