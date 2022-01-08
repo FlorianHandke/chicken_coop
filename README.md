@@ -36,4 +36,8 @@ Why did I choose the ESP32 as the basis for the project:
 
 The L298N allows us to run two DC motors simultaneously. Currently we only need one, but I chose it to automate more components in the chicken house at a later date. For example, the supply of feed.
 
-Motor A can be controlled with OUT1 and OUT2 (motor 2 with OUT3 and Out4). At the "bottom" is the power supply with +12, GND and 5V. The 5V connection can be used to start the chip. However, if the jumper is in place, the start is done via the power supply of the motor.
+Motor A can be controlled with OUT1 and OUT2 (motor 2 with OUT3 and Out4). At the "bottom" is the power supply with +12V (Any Power supply from 6Vto 12V is possible), GND and 5V. The 5V connection can be used to start the chip. However, if the jumper is in place, the start is done via the power supply of the motor.
+
+The IC is controlled via input pins 1 and 2 (3 & 4 for another motor):
+ * If **input 1** is controlled with LOW and **input 2** with HIGH, the motor rotates **"forward"**.
+ * If **input 1** is controlled with HIGH and **input 2** with LOW, the motor rotates **"backwards"**.
