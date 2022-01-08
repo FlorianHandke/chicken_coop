@@ -1,9 +1,5 @@
 # chicken_coop
-Blueprint for a simple automated chicken coop
-
-# Summary
-
-Construction plan for a simple battery-powered control of a chicken coop door.
+Blueprint for a simple battery-powered control of a chicken coop door.
 
 The basis of the construction is an ESP32 microcontroller that controls a motor. The motor used is a DC gear motor that opens the door via a cable pull.
 
