@@ -32,6 +32,14 @@ Why did I choose the ESP32 as the basis for the project:
  * It has Wifi and Bluetooth. This can be used in later extensions, for example, to transfer sensor data (eg via MQTT) from the chicken coop.
  * The price for an ESP32 is about 7€.
 
+### Sleep mode
+
+To operate our setup as battery saving as possible we will use the deep sleep mode of the ESP32. Unnecessary components (e.g. CPU or WiFi) will be switched off and only those that are needed to wake up the processor will be kept active.
+
+The RTC memory of the ESP32 remains active so we can start the CPU by external events or an event timer with minimal power consumption (10µA).
+
+For more information about Deep Sleep Mode: there is a great tutorial from [Great Nerd Tutorial](https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/)
+
 ## L298N Motor Driver
 
 The L298N allows us to run two DC motors simultaneously. Currently we only need one, but I chose it to automate more components in the chicken house at a later date. For example, the supply of feed.
@@ -41,3 +49,7 @@ Motor A can be controlled with OUT1 and OUT2 (motor 2 with OUT3 and Out4). At th
 The IC is controlled via input pins 1 and 2 (3 & 4 for another motor):
  * If **input 1** is controlled with LOW and **input 2** with HIGH, the motor rotates **"forward"**.
  * If **input 1** is controlled with HIGH and **input 2** with LOW, the motor rotates **"backwards"**.
+
+# Arduino IDE
+
+To get started with Arduino [install](https://www.arduino.cc/en/Guide/macOS) the IDE.
