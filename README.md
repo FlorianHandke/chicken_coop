@@ -17,6 +17,7 @@ Since comparable models often cost over 100€, I want to show a low-cost altern
 |SPDT slide switch|<1€|[amazon](https://www.amazon.de/Sourcingmap-Schiebeschalter-Positionen-einpoliger-Umschalter/dp/B007Q854MS/ref=sr_1_13__mk_de_DE=ÅMÅŽÕÑ&crid=175HBGJSCFUBC&keywords=SPDT+slide+switch&qid=1641639692&sprefix=spdt+slide+switch%2Caps%2C73&sr=8-13)|
 |Jumper wires|<1€|[amazon](https://www.amazon.de/Female-Female-Male-Female-Male-Male-Steckbrücken-Drahtbrücken-bunt/dp/B01EV70C78/ref=sr_1_1_sspa__mk_de_DE=ÅMÅŽÕÑ&crid=1D3XLIKPKA47I&keywords=jumper+wires&qid=1641639850&sprefix=jumper+wires%2Caps%2C87&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNkJXOTVKMjQzUUU3JmVuY3J5cHRlZElkPUEwNDI2MTE3MjVLMk9BSzZOV1YzUCZlbmNyeXB0ZWRBZElkPUExMDAwNjg1MUFSNzFTUlhGM0hSOSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)|
 |DHT22  temperatur &humidity sensor| 5,00 | [amazon](https://www.amazon.de/DHT22-AM2302-Digital-Temperatur-Feuchtesensor/dp/B01DB8JH4M/ref=asc_df_B01DB8JH4M/?tag=googshopde-21&linkCode=df0&hvadid=310656370773&hvpos=&hvnetw=g&hvrand=12351117059773754875&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9041896&hvtargid=pla-563427343631&psc=1&th=1&psc=1&tag=&ref=&adgrpid=59918534137&hvpone=&hvptwo=&hvadid=310656370773&hvpos=&hvnetw=g&hvrand=12351117059773754875&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9041896&hvtargid=pla-563427343631)|
+|4,7 kOhm resistor  | <1€   | https://www.amazon.de/Widerstand-4K7-10-fach-Metallschicht-0-6W/dp/B007R3R8KS/ref=sr_1_1?keywords=4%2C7kOhm&qid=1641750900&sr=8-1|
 
 Total costs will be approx 40€.
 
@@ -39,14 +40,6 @@ The RTC memory of the ESP32 remains active so we can start the CPU by external e
 
 For more information about Deep Sleep Mode: there is a great tutorial from [Great Nerd Tutorial](https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/)
 
-### MQTT Broker
-
-> MQTT is a lightweight, publish-subscribe network protocol that transports messages between devices. The protocol usually runs over TCP/IP, however, any network > protocol that provides ordered, lossless, bi-directional connections can support MQTT. [[wikipedia](https://en.wikipedia.org/wiki/MQTT), 2021)
-
-To make sure that the doors are really closed or open, we implement a MQTT client on our ESP32. It will publish data to an MQTT broker (e.g. [Mosquitto](https://mosquitto.org) or [HiveMQ](https://www.hivemq.com)) and we can then consume (or subscribe) the data via NodeRed.
-
-For installations that are too far from the local WiFi network, it is recommended to use LoRaWAN.
-
 ## L298N Motor Driver
 
 The L298N allows us to run two DC motors simultaneously. Currently we only need one, but I chose it to automate more components in the chicken house at a later date. For example, the supply of feed.
@@ -57,8 +50,31 @@ The IC is controlled via input pins 1 and 2 (3 & 4 for another motor):
  * If **input 1** is controlled with LOW and **input 2** with HIGH, the motor rotates **"forward"**.
  * If **input 1** is controlled with HIGH and **input 2** with LOW, the motor rotates **"backwards"**.
 
-## DHT22 temperature and humidity sensor
+## Connect the coop :)
 
+Since everything is supposed to be connected in today's world, we will also generate and export sensor data from our application. Currently I am thinking about the following values:
+ * Position of the door up or down - Reed sensors
+ * Temperature and humidity in the barn - DHT22 sensor
+
+### DHT22 temperature and humidity sensor
+
+To get started with the sensor we need to install tweo libraries:
+[Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor) library
+[DHT](https://github.com/adafruit/DHT-sensor-library) library
+
+The sensor will be connected to **GPIO27** in our case.
+
+For more information please see [this](https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-sensor-arduino-ide/) tutorial from random nerd tutorials.
+
+### MQTT Broker
+
+> MQTT is a lightweight, publish-subscribe network protocol that transports messages between devices. The protocol usually runs over TCP/IP, however, any network > protocol that provides ordered, lossless, bi-directional connections can support MQTT. [[wikipedia](https://en.wikipedia.org/wiki/MQTT), 2021)
+
+To make sure that the doors are really closed or open, we implement a MQTT client on our ESP32. It will publish data to an MQTT broker (e.g. [Mosquitto](https://mosquitto.org) or [HiveMQ](https://www.hivemq.com)) and we can then consume (or subscribe) the data via NodeRed.
+
+For installations that are too far from the local WiFi network, it is recommended to use LoRaWAN.
+
+Find more information about integrating an MQTT client on an ESP32 find more information on [random nerd tutorials](https://randomnerdtutorials.com/esp32-mqtt-publish-subscribe-arduino-ide/). We can run our Broker on any device or server available. Maybe I will run it on HiveMQ, where basic dashboards are already available.
 
 
 # Arduino IDE
